@@ -37,8 +37,7 @@ python scripts/bazi_paipan.py --solar 1990-06-15 --time 10:30 --gender 男
 # 核心（四视角+八字排盘）：只装 lunar-python
 pip install -r requirements.txt
 
-# 完整（六术全功能）：见 requirements-full.txt（⚠️ py-iztro 会尝试锁定 pydantic==2.10.6，
-# 实测 2.13.x 可用；若 pip 强制降级请用 pip install py-iztro --no-deps）
+# 完整（六术全功能）：见 requirements-full.txt
 pip install -r requirements-full.txt
 ```
 

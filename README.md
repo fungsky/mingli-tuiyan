@@ -26,9 +26,7 @@ pip install -r requirements.txt
 pip install -r requirements-full.txt
 ```
 
-> ⚠️ `py-iztro`（紫微）声明 `pydantic==2.10.6`，`pip install py-iztro` 可能尝试降级你环境的 pydantic。
-> 实测 pydantic 2.13.x 下 py-iztro 正常运行（仅 deprecation warning）。
-> 若需避免降级：`pip install py-iztro --no-deps`（确保环境已有 pydantic>=2.0）。
+> 如遇 py-iztro 与本地 pydantic 版本冲突，可单独安装：`pip install py-iztro --no-deps`。
 
 ## 用法
 
