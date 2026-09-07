@@ -11,9 +11,9 @@
 
 | 功能 | 脚本 | 说明 |
 |------|------|------|
-| 六术一键排盘 | `scripts/wushu_all.py` | 八字(双引擎互证)/六爻/紫微/奇门/黄历/占星 |
+| 六术一键排盘 | `scripts/liu_shu_paipan.py` | 八字(双引擎互证)/六爻/紫微/奇门/黄历/占星 |
 | 四视角推演 | `scripts/tuiyan.py` | 强弱评分/调候表/格局初判/五行形象 |
-| 八字排盘库 | `scripts/bazipai.py` | 四柱/十神/藏干/大运 |
+| 八字排盘库 | `scripts/bazi_paipan.py` | 四柱/十神/藏干/大运 |
 | 合婚/正缘方法 | `references/` | 方法论文档 |
 
 ## 安装
@@ -34,7 +34,7 @@ pip install -r requirements-full.txt
 
 ```bash
 # ① 一键六术排盘（示例日期与经纬度均为虚构占位，请替换为实际出生时间/地点）
-python scripts/wushu_all.py --solar 1990-06-15 --time 10:30 --gender 男 --lat 23.13 --lon 113.26
+python scripts/liu_shu_paipan.py --solar 1990-06-15 --time 10:30 --gender 男 --lat 23.13 --lon 113.26
 
 # ② 四视角推演（从出生时间自动排盘）
 python scripts/tuiyan.py --solar 1990-06-15 --time 10:30 --gender 男
@@ -43,7 +43,7 @@ python scripts/tuiyan.py --solar 1990-06-15 --time 10:30 --gender 男
 python scripts/tuiyan.py --bazi "庚午 壬午 辛亥 癸巳" --gender 男
 
 # ④ 只排八字
-python scripts/bazipai.py --solar 1990-06-15 --time 10:30 --gender 男
+python scripts/bazi_paipan.py --solar 1990-06-15 --time 10:30 --gender 男
 ```
 
 ## 方法论
@@ -66,11 +66,11 @@ mingli-tuiyan/
 ├── requirements.txt              # 核心依赖
 ├── requirements-full.txt         # 完整依赖（六术）
 ├── scripts/
-│   ├── wushu_all.py              # 六术一键排盘
-│   ├── tuiyan.py                 # 四视角推演
-│   ├── bazipai.py                # 八字排盘库
-│   ├── tiaohou_table.py          # 穷通宝鉴调候表
-│   └── bazi_skill_pai_pan.py     # 八字排盘第二引擎（零依赖）
+│   ├── liu_shu_paipan.py          # 六术一键排盘
+│   ├── tuiyan.py                  # 四视角推演
+│   ├── bazi_paipan.py             # 八字排盘库
+│   ├── tiao_hou.py                # 穷通宝鉴调候表
+│   └── bazi_paipan_duli.py        # 八字排盘第二引擎（零依赖）
 └── references/
     ├── hehun-method.md           # 合婚推演方法
     ├── third-party-verification.md # 第三方报告核对流程

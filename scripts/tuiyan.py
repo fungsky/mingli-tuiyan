@@ -11,8 +11,8 @@
 import sys, argparse
 sys.stdout.reconfigure(encoding='utf-8')
 
-from bazipai import wuxing, zhi_wuxing, shishen, CANG, SHENG, KE, paipan, YINYANG
-from tiaohou_table import get_tiaohou
+from bazi_paipan import wuxing, zhi_wuxing, shishen, CANG, SHENG, KE, paipan, YINYANG
+from tiao_hou import get_tiaohou
 
 # ---------- 常量 ----------
 # 十二长生（阳干顺/阴干逆，用于得地判断参考；此处用简表：禄=临官）

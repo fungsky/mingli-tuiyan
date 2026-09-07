@@ -9,8 +9,8 @@
 - 奇门：拆补法定局（节气→三元局）
 
 用法：
-  python wushu_all.py --solar 1990-06-15 --time 10:30 --gender 男 --lat 23.13 --lon 113.26
-  python wushu_all.py --solar 1990-06-15 --time 10:30 --gender 男   # 不排占星（缺经纬度）
+  python liu_shu_paipan.py --solar 1990-06-15 --time 10:30 --gender 男 --lat 23.13 --lon 113.26
+  python liu_shu_paipan.py --solar 1990-06-15 --time 10:30 --gender 男   # 不排占星（缺经纬度）
 
 依赖：lunar-python, iching, py-iztro, qimendunjia, pyswisseph
 """
@@ -56,7 +56,7 @@ def main():
     print(f"  四柱：{calc}")
     print(f"  日主：{ba.getDayGan()}({ba.getDayWuXing()[:1]}) 生肖{p.getYearShengXiao()}  十神：年{ba.getYearShiShenGan()} 月{ba.getMonthShiShenGan()} 日{ba.getDayShiShenGan()} 时{ba.getTimeShiShenGan()}")
     try:
-        r = subprocess.run([sys.executable, "bazi_skill_pai_pan.py",
+        r = subprocess.run([sys.executable, "bazi_paipan_duli.py",
                             "--solar", f"{y}-{m:02d}-{d:02d}",
                             "--hour", f"{hh}:{mm:02d}", "--sex", g],
                            capture_output=True, text=True, timeout=60,

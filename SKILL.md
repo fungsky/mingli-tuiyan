@@ -19,7 +19,7 @@ category: consultation
 ```bash
 # 1) 一键六术排盘（八字双引擎互证/六爻/紫微/奇门/黄历/占星）
 #    （示例日期与经纬度均为虚构占位，请替换为实际出生时间/地点；占星需出生地经纬度）
-python scripts/wushu_all.py --solar 1990-06-15 --time 10:30 --gender 男 --lat 23.13 --lon 113.26
+python scripts/liu_shu_paipan.py --solar 1990-06-15 --time 10:30 --gender 男 --lat 23.13 --lon 113.26
 
 # 2) 四视角推演：从出生时间自动排盘
 python scripts/tuiyan.py --solar 1990-06-15 --time 10:30 --gender 男
@@ -28,7 +28,7 @@ python scripts/tuiyan.py --solar 1990-06-15 --time 10:30 --gender 男
 python scripts/tuiyan.py --bazi "庚午 壬午 辛亥 癸巳" --gender 男
 
 # 4) 只排八字（四柱/十神/藏干/大运）
-python scripts/bazipai.py --solar 1990-06-15 --time 10:30 --gender 男
+python scripts/bazi_paipan.py --solar 1990-06-15 --time 10:30 --gender 男
 ```
 
 ## 安装
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 pip install -r requirements-full.txt
 ```
 
-## 六术排盘说明（scripts/wushu_all.py）
+## 六术排盘说明（scripts/liu_shu_paipan.py）
 
 | # | 术 | 库 | 说明 |
 |---|----|----|------|
@@ -58,7 +58,7 @@ pip install -r requirements-full.txt
 | 视角 | 算法 | 输出 |
 |------|------|------|
 | ① 强弱 | 得令(旺/相/休/囚/死 ±3/2/-3/-1/-4) + 得地(禄+3、同五行藏干根 2/1/0.5) + 得生(印封顶2.0) + 得势(天干印比±、财官食伤-) | 总分 → 身强/偏强/中和/偏弱/身弱 + 喜用方向 |
-| ② 调候 | 查 `tiaohou_table.py`（穷通宝鉴 10干×12月）→ 对照命局已现/未现 | 当月主用神清单 |
+| ② 调候 | 查 `tiao_hou.py`（穷通宝鉴 10干×12月）→ 对照命局已现/未现 | 当月主用神清单 |
 | ③ 格局 | 月支本气十神 → 正格八格初判 + 透干参考 | 初判格局名 |
 | ④ 形象 | 干支+藏干五行计数 → 最旺/最弱/缺 | 五行分布数据 |
 
@@ -79,14 +79,14 @@ README.md                         项目说明（安装/用法/方法论/边界�
 SKILL.md                          本技能定义
 requirements.txt                  核心依赖（lunar-python）
 requirements-full.txt             完整依赖（六术）
-scripts/wushu_all.py              六术一键排盘（八字双引擎/六爻/紫微/奇门/黄历/占星）
-scripts/tuiyan.py                 四视角推演（强弱+调候+格局+形象）
-scripts/bazipai.py                八字排盘库（四柱/十神/藏干/大运）
-scripts/tiaohou_table.py          穷通宝鉴调候表（独立数据文件，可校对修改）
-scripts/bazi_skill_pai_pan.py     八字排盘第二引擎（零依赖纯算法）
+scripts/liu_shu_paipan.py      六术一键排盘（八字双引擎/六爻/紫微/奇门/黄历/占星）
+scripts/tuiyan.py              四视角推演（强弱+调候+格局+形象）
+scripts/bazi_paipan.py         八字排盘库（四柱/十神/藏干/大运）
+scripts/tiao_hou.py            穷通宝鉴调候表（独立数据文件，可校对修改）
+scripts/bazi_paipan_duli.py    八字排盘第二引擎（零依赖纯算法）
 references/hehun-method.md        合婚推演方法（干支互动视角）
 references/third-party-verification.md  第三方报告核对流程
 references/zhengyuan-portrait.md  正缘画像分析模板
 ```
 
-> 注意：八字排盘库文件名为 bazipai.py 而非 paipan.py——避免遮蔽奇门库 `qimendunjia` 暴露的顶层模块 `paipan`（import paipan 冲突）。
+> 注意：八字排盘库文件名为 bazi_paipan.py 而非 paipan.py——避免遮蔽奇门库 `qimendunjia` 暴露的顶层模块 `paipan`（import paipan 冲突）。
