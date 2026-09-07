@@ -1,0 +1,11 @@
+# 完整依赖（六术全功能：八字双引擎/六爻/紫微/奇门/黄历/占星）
+# ⚠️ py-iztro 声明 pydantic==2.10.6，pip 可能尝试降级你环境的 pydantic。
+#    实测 pydantic 2.13.x 下 py-iztro 可正常运行（仅 deprecation warning）。
+#    若 pip 强制降级 pydantic，可改用：
+#       pip install py-iztro --no-deps
+#    并保证环境中已有 pydantic>=2.0（2.13.x 实测可用）。
+lunar-python>=1.2.0
+iching>=3.0.0
+py-iztro>=0.1.0
+qimendunjia>=1.6
+pyswisseph>=2.10.0

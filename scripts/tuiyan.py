@@ -11,7 +11,7 @@
 import sys, argparse
 sys.stdout.reconfigure(encoding='utf-8')
 
-from paipan import wuxing, zhi_wuxing, shishen, CANG, SHENG, KE, paipan, YINYANG
+from bazipai import wuxing, zhi_wuxing, shishen, CANG, SHENG, KE, paipan, YINYANG
 from tiaohou_table import get_tiaohou
 
 # ---------- 常量 ----------
